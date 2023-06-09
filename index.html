@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>My title</title>
+        <link rel="stylesheet" type="text/css" href="main.css">    
+<style>
+h1 {
+color: blue;
+background-color: green;
+border: 1px solid black;
+}
+h2 {
+color: purple;
+background-color: white;
+border: 2px solid pink;
+}
+p {
+color: purple;
+}
+</style>
+  <link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+  <body>
+    <script>
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            function myFunction() {
+                (async () => {
+                    let response = await fetch('https://kav-api.kovalev.team/servodrive/lastActualData?servoDriveId=1');
+                    let el = document.getElementById('demo')
+                    el.innerHTML = ""
+                    let text = await response.text(); 
+                    for (const [key, value] of Object.entries(JSON.parse(text)[0])) {
+                        const newEl = document.createElement("li")
+                        newEl.appendChild(document.createTextNode(`${key}: ${value}`))
+                        el.appendChild(newEl)
+                        await sleep(100)
+                    }
+                })()
+            }
+        </script>
+    <header class="site-header">
+      <div class="container">
+        <h1>Плющ Максим Игоревич</h1>
+<p><figure class="pict info-bottom">
+    <img src="528xSxVtsvc.jpg"width="700" height="500" alt="дада я">
+    <figcaption>
+        <span class="info">
+            <h3>Гений</h3>
+            <span>Миллионер, плейбой, поставщик оружия в ирак</span>
+        </span>
+    </figcaption>
+</figure></p>
+        <p><b>Разнообразные фото меня в цвете</b></p>
+        <img src="C:\Users\Макс\Desktop\ненужная херь/-qBkhP7N8Sw.jpg" width="510" height="280" alt="Примеры меня">
+      </div>
+    </header>
+
+    <section class="features">
+      <h2>Чем я помогу вам в работе?</h2>
+      <p>1.Я пунктуальный(всегда вовремя выхожу на перерыв)</p>
+      <p>2.Я очень веселый и буду помогать поддерживать командный дух</p>
+      <p>3.Пожалуйста i need cash <img src="C:\Users\Макс\Desktop\ненужная херь/деньги.jpg" width="50" height="50" alt="Примеры меня"></p>
+    </section>
+
+    <section class="advantages">
+      <h2>Что выделяет меня среди конкурентов?</h2>
+      <ul class="advantages-list">
+        <li>Использую только качественные ручки</li>
+        <li>Ежедневные отчёты о ходе работы</li>
+        <li>Сам купил кепку(без мам пап и кредитов)</li>
+        <li>Бесплатно трачу свои нервы</li>
+        <li>Ежедневная доставка моего тела в вуз</li>
+      </ul>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+	
+<canvas id="rotation" width="86" height="80"></canvas>
+        <p>© Макс, 2003</p>
+        <p>Производитель: Родители</p>
+      </div>
+    </footer>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
